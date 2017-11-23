@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D22CE82F1FC65E6F006342E5 /* launchImg.png in Resources */ = {isa = PBXBuildFile; fileRef = D22CE82E1FC65E6F006342E5 /* launchImg.png */; };
 		D2F588E01FC6578F00FB75A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F588DF1FC6578F00FB75A6 /* main.m */; };
 		D2F588E31FC6578F00FB75A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F588E21FC6578F00FB75A6 /* AppDelegate.m */; };
 		D2F588E61FC6578F00FB75A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F588E51FC6578F00FB75A6 /* ViewController.m */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D22CE82E1FC65E6F006342E5 /* launchImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImg.png; sourceTree = "<group>"; };
 		D2F588DB1FC6578F00FB75A6 /* CAShapeLayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAShapeLayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F588DF1FC6578F00FB75A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D2F588E11FC6578F00FB75A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -101,14 +103,10 @@
 		D2F588DD1FC6578F00FB75A6 /* CAShapeLayerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				D2F588E11FC6578F00FB75A6 /* AppDelegate.h */,
-				D2F588E21FC6578F00FB75A6 /* AppDelegate.m */,
 				D2F588E41FC6578F00FB75A6 /* ViewController.h */,
 				D2F588E51FC6578F00FB75A6 /* ViewController.m */,
+				D22CE82E1FC65E6F006342E5 /* launchImg.png */,
 				D2F588E71FC6578F00FB75A6 /* Main.storyboard */,
-				D2F588EA1FC6578F00FB75A6 /* Assets.xcassets */,
-				D2F588EC1FC6578F00FB75A6 /* LaunchScreen.storyboard */,
-				D2F588EF1FC6578F00FB75A6 /* Info.plist */,
 				D2F588DE1FC6578F00FB75A6 /* Supporting Files */,
 			);
 			path = CAShapeLayerDemo;
@@ -117,6 +115,11 @@
 		D2F588DE1FC6578F00FB75A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D2F588E11FC6578F00FB75A6 /* AppDelegate.h */,
+				D2F588E21FC6578F00FB75A6 /* AppDelegate.m */,
+				D2F588EA1FC6578F00FB75A6 /* Assets.xcassets */,
+				D2F588EC1FC6578F00FB75A6 /* LaunchScreen.storyboard */,
+				D2F588EF1FC6578F00FB75A6 /* Info.plist */,
 				D2F588DF1FC6578F00FB75A6 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -249,6 +252,7 @@
 				D2F588EE1FC6578F00FB75A6 /* LaunchScreen.storyboard in Resources */,
 				D2F588EB1FC6578F00FB75A6 /* Assets.xcassets in Resources */,
 				D2F588E91FC6578F00FB75A6 /* Main.storyboard in Resources */,
+				D22CE82F1FC65E6F006342E5 /* launchImg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +511,7 @@
 				D2F5890A1FC6578F00FB75A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2F5890B1FC6578F00FB75A6 /* Build configuration list for PBXNativeTarget "CAShapeLayerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +520,7 @@
 				D2F5890D1FC6578F00FB75A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2F5890E1FC6578F00FB75A6 /* Build configuration list for PBXNativeTarget "CAShapeLayerDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +529,7 @@
 				D2F589101FC6578F00FB75A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
