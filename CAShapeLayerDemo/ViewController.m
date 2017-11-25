@@ -23,10 +23,15 @@
     // Do any additional setup after loading the view, typically from a nib.
     
 //    [self setLines];
-//    [self setCircle];
+//    [self setCornerRectangle];
+    [self setCircle];
+//    [self setArc];
+//    [self setLineAddArc];
+//    [self setQuadraticCurve];
+//    [self setCubicCurve];
     
 //    [self infoOne];
-    [self infoTwo];
+//    [self infoTwo];
 //    [self infoThree];
 }
 
@@ -65,11 +70,24 @@
     [self.view.layer addSublayer:_shapeLayer];
 }
 
+//圆角矩形、任意角变圆角的矩形
+-(void)setCornerRectangle
+{
+//    _path = [UIBezierPath bezierPathWithRoundedRect:(CGRect){0,0,200,200} cornerRadius:50];
+    _path = [UIBezierPath bezierPathWithRoundedRect:(CGRect){0,0,200,200} byRoundingCorners:UIRectCornerTopLeft | UIRectCornerBottomRight cornerRadii:CGSizeMake(80, 80)];//当指定的圆角大小超过矩形宽或高的一半时，自动取宽或高的一半作为圆角大小
+
+    _shapeLayer = [CAShapeLayer layer];
+    _shapeLayer.bounds = CGRectMake(0, 0, 200, 200);
+    _shapeLayer.position = self.view.center;
+    _shapeLayer.fillColor = [UIColor brownColor].CGColor;
+    _shapeLayer.strokeColor = [UIColor redColor].CGColor;
+    _shapeLayer.path = _path.CGPath;
+    [self.view.layer addSublayer:_shapeLayer];
+}
+
 //圆、椭圆
 -(void)setCircle
 {
-    [self clearSubLayers];
-    
     //绘制圆、椭圆的快速初始化方法
     _path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 260, 200)];
     
@@ -79,6 +97,73 @@
     _shapeLayer.lineWidth = 3.0;
     _shapeLayer.fillColor = [UIColor yellowColor].CGColor;
     _shapeLayer.strokeColor = [UIColor brownColor].CGColor;
+    _shapeLayer.path = [_path CGPath];
+    [self.view.layer addSublayer:_shapeLayer];
+    
+#warning 我擦嘞，居然可以这样实现实时绘制，666
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^
+    {
+        _shapeLayer.strokeStart = 0;
+        _shapeLayer.strokeEnd = 0.5;
+    });
+}
+
+//圆弧（这里和【infoThree】写法一致，其实很好理解，简单来说，设置了layer的frame（或者bounds，position），那么Path的坐标是相对于layer来说的；未设置的话，Path坐标相对于layer的父layer）
+-(void)setArc
+{
+    //圆心  半径  开始位置   结束位置  是否顺时针
+    _path = [UIBezierPath bezierPathWithArcCenter:self.view.center radius:100 startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
+
+    _shapeLayer = [CAShapeLayer layer];
+//    _shapeLayer.bounds = CGRectMake(0, 0, 300, 300);
+//    _shapeLayer.position = self.view.center;
+    _shapeLayer.strokeColor = [UIColor redColor].CGColor;
+    _shapeLayer.fillColor = [UIColor yellowColor].CGColor;
+//    _path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(150, 150) radius:100 startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
+    _shapeLayer.path = _path.CGPath;
+    [self.view.layer addSublayer:_shapeLayer];
+}
+
+//折线和弧线构成的图形
+-(void)setLineAddArc
+{
+    _path = [UIBezierPath bezierPath];
+    [_path moveToPoint:(CGPoint){100,100}];
+    [_path addLineToPoint:self.view.center];
+    [_path addArcWithCenter:self.view.center radius:50 startAngle:0 endAngle:M_PI clockwise:YES];//添加一条弧线
+    
+    _shapeLayer = [CAShapeLayer layer];
+    _shapeLayer.lineWidth = 2.0;
+    _shapeLayer.strokeColor = [UIColor redColor].CGColor;
+//    _shapeLayer.fillColor = nil;//默认黑色，观察效果也印证了.h中说的4
+    _shapeLayer.path = _path.CGPath;
+    [self.view.layer addSublayer:_shapeLayer];
+}
+
+//二次贝塞尔曲线
+-(void)setQuadraticCurve
+{
+    _path = [UIBezierPath bezierPath];
+    [_path moveToPoint:CGPointMake(100, 100)];
+    [_path addQuadCurveToPoint:CGPointMake(300, 200) controlPoint:CGPointMake(200, 400)];
+    
+    _shapeLayer = [CAShapeLayer layer];
+    _shapeLayer.strokeColor = [UIColor redColor].CGColor;
+    _shapeLayer.fillColor = [UIColor lightGrayColor].CGColor;
+    _shapeLayer.path = _path.CGPath;
+    [self.view.layer addSublayer:_shapeLayer];
+}
+
+//三次贝塞尔曲线
+-(void)setCubicCurve
+{
+    _path = [UIBezierPath bezierPath];
+    [_path moveToPoint:CGPointMake(50, 200)];
+    [_path addCurveToPoint:CGPointMake(300, 300) controlPoint1:CGPointMake(100, 450) controlPoint2:CGPointMake(200, 50)];
+    
+    _shapeLayer = [CAShapeLayer layer];
+    _shapeLayer.strokeColor = [UIColor redColor].CGColor;
+    _shapeLayer.fillColor = nil;
     _shapeLayer.path = [_path CGPath];
     [self.view.layer addSublayer:_shapeLayer];
 }
@@ -100,8 +185,6 @@
 //CAShapeLayer不是必须配合UIBezierPath才能使用的，单独也可以使用，只不过配合UIBezierPath功能更强大
 -(void)infoOne
 {
-    [self clearSubLayers];
-    
     _shapeLayer = [CAShapeLayer layer];
     _shapeLayer.bounds = CGRectMake(0, 0, 200, 200);
     _shapeLayer.position = self.view.center;
@@ -139,7 +222,6 @@
     _shapeLayer.path = [_path CGPath];
     [self.view.layer addSublayer:_shapeLayer];
 }
-
 
 
 @end
