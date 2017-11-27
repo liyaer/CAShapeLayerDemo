@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		D22CE82F1FC65E6F006342E5 /* launchImg.png in Resources */ = {isa = PBXBuildFile; fileRef = D22CE82E1FC65E6F006342E5 /* launchImg.png */; };
+		D23DDA391FCBFB82003FEF35 /* BezierCurveView.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DDA371FCBFB82003FEF35 /* BezierCurveView.m */; };
+		D23DDA3A1FCBFB82003FEF35 /* BezierCurveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23DDA381FCBFB82003FEF35 /* BezierCurveView.xib */; };
+		D23DDA3D1FCBFCA2003FEF35 /* DemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DDA3C1FCBFCA2003FEF35 /* DemoVC.m */; };
 		D2F588E01FC6578F00FB75A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F588DF1FC6578F00FB75A6 /* main.m */; };
 		D2F588E31FC6578F00FB75A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F588E21FC6578F00FB75A6 /* AppDelegate.m */; };
-		D2F588E61FC6578F00FB75A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F588E51FC6578F00FB75A6 /* ViewController.m */; };
+		D2F588E61FC6578F00FB75A6 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F588E51FC6578F00FB75A6 /* BaseVC.m */; };
 		D2F588E91FC6578F00FB75A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F588E71FC6578F00FB75A6 /* Main.storyboard */; };
 		D2F588EB1FC6578F00FB75A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F588EA1FC6578F00FB75A6 /* Assets.xcassets */; };
 		D2F588EE1FC6578F00FB75A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F588EC1FC6578F00FB75A6 /* LaunchScreen.storyboard */; };
@@ -37,12 +40,17 @@
 
 /* Begin PBXFileReference section */
 		D22CE82E1FC65E6F006342E5 /* launchImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImg.png; sourceTree = "<group>"; };
+		D23DDA361FCBFB82003FEF35 /* BezierCurveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierCurveView.h; sourceTree = "<group>"; };
+		D23DDA371FCBFB82003FEF35 /* BezierCurveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierCurveView.m; sourceTree = "<group>"; };
+		D23DDA381FCBFB82003FEF35 /* BezierCurveView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BezierCurveView.xib; sourceTree = "<group>"; };
+		D23DDA3B1FCBFCA2003FEF35 /* DemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoVC.h; sourceTree = "<group>"; };
+		D23DDA3C1FCBFCA2003FEF35 /* DemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoVC.m; sourceTree = "<group>"; };
 		D2F588DB1FC6578F00FB75A6 /* CAShapeLayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAShapeLayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F588DF1FC6578F00FB75A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D2F588E11FC6578F00FB75A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2F588E21FC6578F00FB75A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D2F588E41FC6578F00FB75A6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D2F588E51FC6578F00FB75A6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D2F588E41FC6578F00FB75A6 /* BaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
+		D2F588E51FC6578F00FB75A6 /* BaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		D2F588E81FC6578F00FB75A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2F588EA1FC6578F00FB75A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2F588ED1FC6578F00FB75A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,6 +88,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D23DDA351FCBFB82003FEF35 /* 应用举例 */ = {
+			isa = PBXGroup;
+			children = (
+				D23DDA3B1FCBFCA2003FEF35 /* DemoVC.h */,
+				D23DDA3C1FCBFCA2003FEF35 /* DemoVC.m */,
+				D23DDA361FCBFB82003FEF35 /* BezierCurveView.h */,
+				D23DDA371FCBFB82003FEF35 /* BezierCurveView.m */,
+				D23DDA381FCBFB82003FEF35 /* BezierCurveView.xib */,
+			);
+			path = "应用举例";
+			sourceTree = "<group>";
+		};
 		D2F588D21FC6578F00FB75A6 = {
 			isa = PBXGroup;
 			children = (
@@ -103,10 +123,11 @@
 		D2F588DD1FC6578F00FB75A6 /* CAShapeLayerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				D2F588E41FC6578F00FB75A6 /* ViewController.h */,
-				D2F588E51FC6578F00FB75A6 /* ViewController.m */,
 				D22CE82E1FC65E6F006342E5 /* launchImg.png */,
 				D2F588E71FC6578F00FB75A6 /* Main.storyboard */,
+				D2F588E41FC6578F00FB75A6 /* BaseVC.h */,
+				D2F588E51FC6578F00FB75A6 /* BaseVC.m */,
+				D23DDA351FCBFB82003FEF35 /* 应用举例 */,
 				D2F588DE1FC6578F00FB75A6 /* Supporting Files */,
 			);
 			path = CAShapeLayerDemo;
@@ -253,6 +274,7 @@
 				D2F588EB1FC6578F00FB75A6 /* Assets.xcassets in Resources */,
 				D2F588E91FC6578F00FB75A6 /* Main.storyboard in Resources */,
 				D22CE82F1FC65E6F006342E5 /* launchImg.png in Resources */,
+				D23DDA3A1FCBFB82003FEF35 /* BezierCurveView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,8 +299,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2F588E61FC6578F00FB75A6 /* ViewController.m in Sources */,
+				D2F588E61FC6578F00FB75A6 /* BaseVC.m in Sources */,
+				D23DDA391FCBFB82003FEF35 /* BezierCurveView.m in Sources */,
 				D2F588E31FC6578F00FB75A6 /* AppDelegate.m in Sources */,
+				D23DDA3D1FCBFCA2003FEF35 /* DemoVC.m in Sources */,
 				D2F588E01FC6578F00FB75A6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

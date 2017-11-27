@@ -6,16 +6,16 @@
 //  Copyright © 2017年 杜文亮. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "BaseVC.h"
 
-@interface ViewController ()
+@interface BaseVC ()
 {
     UIBezierPath *_path;
     CAShapeLayer *_shapeLayer;
 }
 @end
 
-@implementation ViewController
+@implementation BaseVC
 
 - (void)viewDidLoad
 {

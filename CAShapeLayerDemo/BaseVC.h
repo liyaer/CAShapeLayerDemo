@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface BaseVC : UIViewController
 
 /*
  *   UIBezierPath：（贝塞尔曲线）
