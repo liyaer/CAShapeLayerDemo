@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		D22CE82F1FC65E6F006342E5 /* launchImg.png in Resources */ = {isa = PBXBuildFile; fileRef = D22CE82E1FC65E6F006342E5 /* launchImg.png */; };
-		D23DDA391FCBFB82003FEF35 /* BezierCurveView.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DDA371FCBFB82003FEF35 /* BezierCurveView.m */; };
-		D23DDA3A1FCBFB82003FEF35 /* BezierCurveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23DDA381FCBFB82003FEF35 /* BezierCurveView.xib */; };
-		D23DDA3D1FCBFCA2003FEF35 /* DemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DDA3C1FCBFCA2003FEF35 /* DemoVC.m */; };
+		D23DDA961FCD6451003FEF35 /* CAShapeLayer+ViewMask.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DDA931FCD6451003FEF35 /* CAShapeLayer+ViewMask.m */; };
+		D23DDA971FCD6451003FEF35 /* VoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DDA951FCD6451003FEF35 /* VoiceView.m */; };
+		D23DDA9A1FCD64D2003FEF35 /* VoiceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DDA991FCD64D2003FEF35 /* VoiceVC.m */; };
+		D23DDAA11FCD6576003FEF35 /* BezierCurveView.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DDA9D1FCD6576003FEF35 /* BezierCurveView.m */; };
+		D23DDAA21FCD6576003FEF35 /* BezierCurveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23DDA9E1FCD6576003FEF35 /* BezierCurveView.xib */; };
+		D23DDAA31FCD6576003FEF35 /* DemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DDAA01FCD6576003FEF35 /* DemoVC.m */; };
 		D2F588E01FC6578F00FB75A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F588DF1FC6578F00FB75A6 /* main.m */; };
 		D2F588E31FC6578F00FB75A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F588E21FC6578F00FB75A6 /* AppDelegate.m */; };
 		D2F588E61FC6578F00FB75A6 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F588E51FC6578F00FB75A6 /* BaseVC.m */; };
@@ -40,11 +43,17 @@
 
 /* Begin PBXFileReference section */
 		D22CE82E1FC65E6F006342E5 /* launchImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImg.png; sourceTree = "<group>"; };
-		D23DDA361FCBFB82003FEF35 /* BezierCurveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierCurveView.h; sourceTree = "<group>"; };
-		D23DDA371FCBFB82003FEF35 /* BezierCurveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierCurveView.m; sourceTree = "<group>"; };
-		D23DDA381FCBFB82003FEF35 /* BezierCurveView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BezierCurveView.xib; sourceTree = "<group>"; };
-		D23DDA3B1FCBFCA2003FEF35 /* DemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoVC.h; sourceTree = "<group>"; };
-		D23DDA3C1FCBFCA2003FEF35 /* DemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoVC.m; sourceTree = "<group>"; };
+		D23DDA921FCD6451003FEF35 /* CAShapeLayer+ViewMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+ViewMask.h"; sourceTree = "<group>"; };
+		D23DDA931FCD6451003FEF35 /* CAShapeLayer+ViewMask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+ViewMask.m"; sourceTree = "<group>"; };
+		D23DDA941FCD6451003FEF35 /* VoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceView.h; sourceTree = "<group>"; };
+		D23DDA951FCD6451003FEF35 /* VoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceView.m; sourceTree = "<group>"; };
+		D23DDA981FCD64D2003FEF35 /* VoiceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceVC.h; sourceTree = "<group>"; };
+		D23DDA991FCD64D2003FEF35 /* VoiceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceVC.m; sourceTree = "<group>"; };
+		D23DDA9C1FCD6576003FEF35 /* BezierCurveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierCurveView.h; sourceTree = "<group>"; };
+		D23DDA9D1FCD6576003FEF35 /* BezierCurveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierCurveView.m; sourceTree = "<group>"; };
+		D23DDA9E1FCD6576003FEF35 /* BezierCurveView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BezierCurveView.xib; sourceTree = "<group>"; };
+		D23DDA9F1FCD6576003FEF35 /* DemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoVC.h; sourceTree = "<group>"; };
+		D23DDAA01FCD6576003FEF35 /* DemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoVC.m; sourceTree = "<group>"; };
 		D2F588DB1FC6578F00FB75A6 /* CAShapeLayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAShapeLayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F588DF1FC6578F00FB75A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D2F588E11FC6578F00FB75A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -88,16 +97,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D23DDA351FCBFB82003FEF35 /* 应用举例 */ = {
+		D23DDA911FCD6433003FEF35 /* 模拟语音动态显示 */ = {
 			isa = PBXGroup;
 			children = (
-				D23DDA3B1FCBFCA2003FEF35 /* DemoVC.h */,
-				D23DDA3C1FCBFCA2003FEF35 /* DemoVC.m */,
-				D23DDA361FCBFB82003FEF35 /* BezierCurveView.h */,
-				D23DDA371FCBFB82003FEF35 /* BezierCurveView.m */,
-				D23DDA381FCBFB82003FEF35 /* BezierCurveView.xib */,
+				D23DDA981FCD64D2003FEF35 /* VoiceVC.h */,
+				D23DDA991FCD64D2003FEF35 /* VoiceVC.m */,
+				D23DDA921FCD6451003FEF35 /* CAShapeLayer+ViewMask.h */,
+				D23DDA931FCD6451003FEF35 /* CAShapeLayer+ViewMask.m */,
+				D23DDA941FCD6451003FEF35 /* VoiceView.h */,
+				D23DDA951FCD6451003FEF35 /* VoiceView.m */,
 			);
-			path = "应用举例";
+			path = "模拟语音动态显示";
+			sourceTree = "<group>";
+		};
+		D23DDA9B1FCD6576003FEF35 /* 柱 折线 饼状图 */ = {
+			isa = PBXGroup;
+			children = (
+				D23DDA9F1FCD6576003FEF35 /* DemoVC.h */,
+				D23DDAA01FCD6576003FEF35 /* DemoVC.m */,
+				D23DDA9C1FCD6576003FEF35 /* BezierCurveView.h */,
+				D23DDA9D1FCD6576003FEF35 /* BezierCurveView.m */,
+				D23DDA9E1FCD6576003FEF35 /* BezierCurveView.xib */,
+			);
+			path = "柱 折线 饼状图";
 			sourceTree = "<group>";
 		};
 		D2F588D21FC6578F00FB75A6 = {
@@ -123,11 +145,11 @@
 		D2F588DD1FC6578F00FB75A6 /* CAShapeLayerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				D22CE82E1FC65E6F006342E5 /* launchImg.png */,
 				D2F588E71FC6578F00FB75A6 /* Main.storyboard */,
 				D2F588E41FC6578F00FB75A6 /* BaseVC.h */,
 				D2F588E51FC6578F00FB75A6 /* BaseVC.m */,
-				D23DDA351FCBFB82003FEF35 /* 应用举例 */,
+				D23DDA9B1FCD6576003FEF35 /* 柱 折线 饼状图 */,
+				D23DDA911FCD6433003FEF35 /* 模拟语音动态显示 */,
 				D2F588DE1FC6578F00FB75A6 /* Supporting Files */,
 			);
 			path = CAShapeLayerDemo;
@@ -136,6 +158,7 @@
 		D2F588DE1FC6578F00FB75A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D22CE82E1FC65E6F006342E5 /* launchImg.png */,
 				D2F588E11FC6578F00FB75A6 /* AppDelegate.h */,
 				D2F588E21FC6578F00FB75A6 /* AppDelegate.m */,
 				D2F588EA1FC6578F00FB75A6 /* Assets.xcassets */,
@@ -274,7 +297,7 @@
 				D2F588EB1FC6578F00FB75A6 /* Assets.xcassets in Resources */,
 				D2F588E91FC6578F00FB75A6 /* Main.storyboard in Resources */,
 				D22CE82F1FC65E6F006342E5 /* launchImg.png in Resources */,
-				D23DDA3A1FCBFB82003FEF35 /* BezierCurveView.xib in Resources */,
+				D23DDAA21FCD6576003FEF35 /* BezierCurveView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,10 +322,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D23DDA961FCD6451003FEF35 /* CAShapeLayer+ViewMask.m in Sources */,
+				D23DDAA31FCD6576003FEF35 /* DemoVC.m in Sources */,
 				D2F588E61FC6578F00FB75A6 /* BaseVC.m in Sources */,
-				D23DDA391FCBFB82003FEF35 /* BezierCurveView.m in Sources */,
+				D23DDA9A1FCD64D2003FEF35 /* VoiceVC.m in Sources */,
 				D2F588E31FC6578F00FB75A6 /* AppDelegate.m in Sources */,
-				D23DDA3D1FCBFCA2003FEF35 /* DemoVC.m in Sources */,
+				D23DDA971FCD6451003FEF35 /* VoiceView.m in Sources */,
+				D23DDAA11FCD6576003FEF35 /* BezierCurveView.m in Sources */,
 				D2F588E01FC6578F00FB75A6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

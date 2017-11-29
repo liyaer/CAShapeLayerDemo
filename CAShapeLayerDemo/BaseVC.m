@@ -210,7 +210,7 @@
 /*
  *   [infoTwo]（包括上面几种图形的绘制），都是指定_shapeLayer的bounds、position，然后_path在bounds中进行绘制；这里我们不指定_shapeLayer的bounds、position（注意这两个属性是用来确定layer在父layer中的位置和大小，此时打印bounds是0），直接给layer一个Path，发现依然可以绘制，并且Path中的rect对应当前坐标系
  
-     猜测：根据响应者链，Path的rect匹配到了self.view.layer（即_shapeLayer的父layer）中
+     猜测：根据响应者链，Path的rect匹配到了self.view.layer（即_shapeLayer的父layer）中,这种写法在开发中很常见
  */
 -(void)infoThree
 {

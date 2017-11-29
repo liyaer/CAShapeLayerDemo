@@ -268,6 +268,7 @@ static CGRect myFrame;
         [bezierPath closePath];
         
         
+#warning x,y点不知道咋算出来的😂
         //添加文字
         CGFloat X = point.x + 120*cos(startAngle+(endAngle-startAngle)/2) - 10;
         CGFloat Y = point.y + 110*sin(startAngle+(endAngle-startAngle)/2) - 10;
