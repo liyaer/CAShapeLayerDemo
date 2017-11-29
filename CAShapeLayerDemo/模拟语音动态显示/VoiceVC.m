@@ -33,42 +33,42 @@
     voice.center = self.view.center;
     [self.view addSubview:voice];
     
-    //NSTimer实现动画效果
-//    timer = [NSTimer timerWithTimeInterval:0.3 repeats:YES block:^(NSTimer * _Nonnull timer)
-//    {
-//         if (_isDown)
-//         {
-//             if (_voice == 0)
-//             {
-//                 _voice += 10;
-//                 _isDown = NO;
-//             }
-//             else
-//             {
-//                 _voice -= 10;
-//             }
-//         }
-//         else
-//         {
-//             if (_voice == 90)
-//             {
-//                 _voice -= 10;
-//                 _isDown = YES;
-//             }
-//             else
-//             {
-//                 _voice += 10;
-//             }
-//         }
-//         [voice setVoiceValue:_voice];
-//     }];
-//    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+    //NSTimer模拟不断重绘实现动画效果
+    timer = [NSTimer timerWithTimeInterval:.5 repeats:YES block:^(NSTimer * _Nonnull timer)
+    {
+         if (_isDown)
+         {
+             if (_voice == 0)
+             {
+                 _voice += 10;
+                 _isDown = NO;
+             }
+             else
+             {
+                 _voice -= 10;
+             }
+         }
+         else
+         {
+             if (_voice == 90)
+             {
+                 _voice -= 10;
+                 _isDown = YES;
+             }
+             else
+             {
+                 _voice += 10;
+             }
+         }
+         [voice setVoiceValue:_voice];
+     }];
+    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
     
     
-    //CADisplayLink实现动画效果
-    _dispaly = [CADisplayLink displayLinkWithTarget:self selector:@selector(animationVoice)];
-    _dispaly.preferredFramesPerSecond = 10;
-    [_dispaly addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    //CADisplayLink模拟不断重绘实现动画效果
+//    _dispaly = [CADisplayLink displayLinkWithTarget:self selector:@selector(animationVoice)];
+//    _dispaly.preferredFramesPerSecond = 10;
+//    [_dispaly addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
 -(void)animationVoice

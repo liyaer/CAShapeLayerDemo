@@ -63,28 +63,41 @@ static CGFloat h,w;
     //    _sv.layer.masksToBounds = YES;//和下面使用mask效果一致，貌似下面的节省性能
         _sv.layer.mask = [CAShapeLayer createMaskLayerWithView:_sv];//这个类别不具有通用性，可以不使用类别，将方法写到本类中调用
         [self addSubview:_sv];
+        
+        _layer = [CAShapeLayer layer];
+        _layer.fillColor = [UIColor whiteColor].CGColor;
+        _layer.strokeColor = [UIColor whiteColor].CGColor;
+        [_sv.layer addSublayer:_layer];
     }
     return self;
 }
 
--(void)setVoiceValue:(CGFloat)voiceValue;
+//根据<环形进度条>中_progressLayer的绘制方式得到启发（这种方式充分体现了CAShapeLayer相对于drawRect方式的优点）
+-(void)setVoiceValue:(CGFloat)voiceValue
 {
-    //移除上次添加的显示进度的layer(保证_sv.layer每次只添加一个subLayer显示)
-    [_path removeAllPoints];
-    _path = nil;
-    [_layer removeFromSuperlayer];
-    _layer = nil;
-
     _path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 90 -voiceValue, 50, voiceValue)];
-    _layer = [CAShapeLayer layer];
-    _layer.fillColor = [UIColor whiteColor].CGColor;
-    _layer.strokeColor = [UIColor whiteColor].CGColor;
     _layer.path = _path.CGPath;
-    [_sv.layer addSublayer:_layer];
-    
-    //self.layer的子layer有三个，但是类型不同，两个CAShapeLayer（用于绘制）,一个CALayer（子视图_sv的layer）；_sv.layer的子layer只有_layer一个
-    NSLog(@"=====%.2f=======%ld======%ld",voiceValue,self.layer.sublayers.count,_sv.layer.sublayers.count);
 }
+
+//这是第一次的做法，每次移除layer再添加layer的方式，显得比较笨拙，废弃（这种方式本质和drawRect更新时调用【self setNeedsDisplay】重新绘制全部内容类似，没有发挥CAShapeLayer的优点）
+//-(void)setVoiceValue:(CGFloat)voiceValue;
+//{
+//    //移除上次添加的显示进度的layer(保证_sv.layer每次只添加一个subLayer显示)
+//    [_path removeAllPoints];
+//    _path = nil;
+//    [_layer removeFromSuperlayer];
+//    _layer = nil;
+//
+//    _path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 90 -voiceValue, 50, voiceValue)];
+//    _layer = [CAShapeLayer layer];
+//    _layer.fillColor = [UIColor whiteColor].CGColor;
+//    _layer.strokeColor = [UIColor whiteColor].CGColor;
+//    _layer.path = _path.CGPath;
+//    [_sv.layer addSublayer:_layer];
+//    
+//    //self.layer的子layer有三个，但是类型不同，两个CAShapeLayer（用于绘制）,一个CALayer（子视图_sv的layer）；_sv.layer的子layer只有_layer一个
+//    NSLog(@"=====%.2f=======%ld======%ld",voiceValue,self.layer.sublayers.count,_sv.layer.sublayers.count);
+//}
 
 
 @end

@@ -99,13 +99,29 @@
     _shapeLayer.strokeColor = [UIColor brownColor].CGColor;
     _shapeLayer.path = [_path CGPath];
     [self.view.layer addSublayer:_shapeLayer];
+
+#warning 这里提出动态绘制内容、动画效果两个概念，具体的使用请参考<环形进度条>（里面两个概念都用到了）
+    /*
+     *   一次绘制完成，drawRect方式想更新绘制内容只能通过【self setNeedsDisplay】来调用drawRect方法重新绘制实现（因为绘制代码只能写在drawRect中）
+         一次绘制完成，CAShapeLayer可以通过直接修改绘制属性实现更新
+     */
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^
+//    {
+//        _shapeLayer.lineWidth = 10.0;
+//        _shapeLayer.fillColor = [UIColor redColor].CGColor;
+//        _shapeLayer.strokeColor = [UIColor greenColor].CGColor;
+//        _shapeLayer.strokeStart = 0;
+//        _shapeLayer.strokeEnd = 0.5;
+//    });
     
-#warning 我擦嘞，居然可以这样实现实时绘制，666
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^
-    {
-        _shapeLayer.strokeStart = 0;
-        _shapeLayer.strokeEnd = 0.5;
-    });
+//    CABasicAnimation *pathAnima = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+//    pathAnima.duration = 3.0f;
+//    pathAnima.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//    pathAnima.fromValue = [NSNumber numberWithFloat:0.0f];
+//    pathAnima.toValue = [NSNumber numberWithFloat:1.0f];
+//    pathAnima.fillMode = kCAFillModeForwards;
+//    pathAnima.removedOnCompletion = NO;
+//    [_shapeLayer addAnimation:pathAnima forKey:@"strokeEndAnimation"];
 }
 
 //圆弧（这里和【infoThree】写法一致，其实很好理解，简单来说，设置了layer的frame（或者bounds，position），那么Path的坐标是相对于layer来说的；未设置的话，Path坐标相对于layer的父layer）

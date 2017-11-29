@@ -14,6 +14,8 @@
 		D23DDAA11FCD6576003FEF35 /* BezierCurveView.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DDA9D1FCD6576003FEF35 /* BezierCurveView.m */; };
 		D23DDAA21FCD6576003FEF35 /* BezierCurveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23DDA9E1FCD6576003FEF35 /* BezierCurveView.xib */; };
 		D23DDAA31FCD6576003FEF35 /* DemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DDAA01FCD6576003FEF35 /* DemoVC.m */; };
+		D26EF8C51FCE8C2E0001888A /* QLCycleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D26EF8C41FCE8C2E0001888A /* QLCycleProgressView.m */; };
+		D26EF8C81FCE8C7B0001888A /* AnnularVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D26EF8C71FCE8C7B0001888A /* AnnularVC.m */; };
 		D2F588E01FC6578F00FB75A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F588DF1FC6578F00FB75A6 /* main.m */; };
 		D2F588E31FC6578F00FB75A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F588E21FC6578F00FB75A6 /* AppDelegate.m */; };
 		D2F588E61FC6578F00FB75A6 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F588E51FC6578F00FB75A6 /* BaseVC.m */; };
@@ -54,6 +56,10 @@
 		D23DDA9E1FCD6576003FEF35 /* BezierCurveView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BezierCurveView.xib; sourceTree = "<group>"; };
 		D23DDA9F1FCD6576003FEF35 /* DemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoVC.h; sourceTree = "<group>"; };
 		D23DDAA01FCD6576003FEF35 /* DemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoVC.m; sourceTree = "<group>"; };
+		D26EF8C31FCE8C2E0001888A /* QLCycleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLCycleProgressView.h; sourceTree = "<group>"; };
+		D26EF8C41FCE8C2E0001888A /* QLCycleProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLCycleProgressView.m; sourceTree = "<group>"; };
+		D26EF8C61FCE8C7B0001888A /* AnnularVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnularVC.h; sourceTree = "<group>"; };
+		D26EF8C71FCE8C7B0001888A /* AnnularVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnularVC.m; sourceTree = "<group>"; };
 		D2F588DB1FC6578F00FB75A6 /* CAShapeLayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAShapeLayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F588DF1FC6578F00FB75A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D2F588E11FC6578F00FB75A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -102,10 +108,10 @@
 			children = (
 				D23DDA981FCD64D2003FEF35 /* VoiceVC.h */,
 				D23DDA991FCD64D2003FEF35 /* VoiceVC.m */,
-				D23DDA921FCD6451003FEF35 /* CAShapeLayer+ViewMask.h */,
-				D23DDA931FCD6451003FEF35 /* CAShapeLayer+ViewMask.m */,
 				D23DDA941FCD6451003FEF35 /* VoiceView.h */,
 				D23DDA951FCD6451003FEF35 /* VoiceView.m */,
+				D23DDA921FCD6451003FEF35 /* CAShapeLayer+ViewMask.h */,
+				D23DDA931FCD6451003FEF35 /* CAShapeLayer+ViewMask.m */,
 			);
 			path = "模拟语音动态显示";
 			sourceTree = "<group>";
@@ -120,6 +126,17 @@
 				D23DDA9E1FCD6576003FEF35 /* BezierCurveView.xib */,
 			);
 			path = "柱 折线 饼状图";
+			sourceTree = "<group>";
+		};
+		D26EF8C21FCE87D10001888A /* 环形进度条 */ = {
+			isa = PBXGroup;
+			children = (
+				D26EF8C61FCE8C7B0001888A /* AnnularVC.h */,
+				D26EF8C71FCE8C7B0001888A /* AnnularVC.m */,
+				D26EF8C31FCE8C2E0001888A /* QLCycleProgressView.h */,
+				D26EF8C41FCE8C2E0001888A /* QLCycleProgressView.m */,
+			);
+			path = "环形进度条";
 			sourceTree = "<group>";
 		};
 		D2F588D21FC6578F00FB75A6 = {
@@ -150,6 +167,7 @@
 				D2F588E51FC6578F00FB75A6 /* BaseVC.m */,
 				D23DDA9B1FCD6576003FEF35 /* 柱 折线 饼状图 */,
 				D23DDA911FCD6433003FEF35 /* 模拟语音动态显示 */,
+				D26EF8C21FCE87D10001888A /* 环形进度条 */,
 				D2F588DE1FC6578F00FB75A6 /* Supporting Files */,
 			);
 			path = CAShapeLayerDemo;
@@ -322,7 +340,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26EF8C51FCE8C2E0001888A /* QLCycleProgressView.m in Sources */,
 				D23DDA961FCD6451003FEF35 /* CAShapeLayer+ViewMask.m in Sources */,
+				D26EF8C81FCE8C7B0001888A /* AnnularVC.m in Sources */,
 				D23DDAA31FCD6576003FEF35 /* DemoVC.m in Sources */,
 				D2F588E61FC6578F00FB75A6 /* BaseVC.m in Sources */,
 				D23DDA9A1FCD64D2003FEF35 /* VoiceVC.m in Sources */,

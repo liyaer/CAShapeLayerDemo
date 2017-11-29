@@ -168,6 +168,16 @@ static CGRect myFrame;
     shapeLayer.borderWidth = 2.0;
     [self.subviews[0].layer addSublayer:shapeLayer];
     
+#warning 动画是针对于stroke的，fill部分无动画效果(所以动画只写在折线图这里，其他两个柱、饼状图不设置)
+    CABasicAnimation *pathAnima = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    pathAnima.duration = 3.0f;
+    pathAnima.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    pathAnima.fromValue = [NSNumber numberWithFloat:0.0f];
+    pathAnima.toValue = [NSNumber numberWithFloat:1.0f];
+    pathAnima.fillMode = kCAFillModeForwards;
+    pathAnima.removedOnCompletion = NO;
+    [shapeLayer addAnimation:pathAnima forKey:@"strokeEndAnimation"];
+    
     //4.添加目标值文字
     for (int i =0; i<allPoints.count; i++)
     {
