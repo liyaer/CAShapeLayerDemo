@@ -24,7 +24,7 @@
     
 //    [self setLines];
 //    [self setCornerRectangle];
-    [self setCircle];
+//    [self setCircle];
 //    [self setArc];
 //    [self setLineAddArc];
 //    [self setQuadraticCurve];
@@ -33,6 +33,10 @@
 //    [self infoOne];
 //    [self infoTwo];
 //    [self infoThree];
+    
+    //以同心圆为例说明两种填充规则
+//    [self fillByNonZero];
+    [self fillByEvenOdd];
 }
 
 //直线、折线、多边形
@@ -239,5 +243,80 @@
     [self.view.layer addSublayer:_shapeLayer];
 }
 
+
+
+
+#pragma mark - CAShapeLayer两种填充规则介绍（内部区域会被填充）
+
+/*
+ *   kCAFillRuleNonZero 非零绕数（与内部图形的绘制方向顺、逆时针有关）
+     
+     要判断一个点是否在图形内，从该点作任意方向的一条射线，然后检测射线与图形路径的交点情况。从0开始计数，路径“从左向右”穿过射线则计数加1，“从右向左”穿过射线则计数减1。得出计数结果后，如果结果是0，则认为点在图形外部，否则认为在内部
+ */
+-(void)fillByNonZero
+{
+    //顺逆：中间不填充，圆环填充；顺顺或者逆逆：全部填充
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:self.view.center radius:100 startAngle:0 endAngle:M_PI *2 clockwise:YES];
+    [path moveToPoint:CGPointMake(self.view.center.x +150, self.view.center.y)];
+//    [path addArcWithCenter:self.view.center radius:150 startAngle:0 endAngle:M_PI *2 clockwise:YES];
+    [path addArcWithCenter:self.view.center radius:150 startAngle:M_PI *2 endAngle:0 clockwise:NO];//注意：设置逆时针，开始和结束的弧度也要做相应改变
+    
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.path = path.CGPath;
+    shapeLayer.fillColor = [UIColor redColor].CGColor;
+    shapeLayer.strokeColor = [UIColor blackColor].CGColor;
+//    shapeLayer.fillRule = kCAFillRuleNonZero;//默认就是非零绕数，不设置也行
+    [self.view.layer addSublayer:shapeLayer];
+}
+
+/*
+ *   kCAFillRuleEvenOdd奇偶填充（与内部图形的绘制方向顺、逆时针无关）
+ 
+     要判断一个点是否在图形内，从该点作任意方向的一条射线，然后检测射线与图形路径的交点的数量。如果结果是奇数则认为点在内部，是偶数则认为点在外部
+ */
+-(void)fillByEvenOdd
+{
+    //无关顺、逆时针，都是中间不填充，圆环填充
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:self.view.center radius:100 startAngle:0 endAngle:M_PI *2 clockwise:YES];
+    [path moveToPoint:CGPointMake(self.view.center.x +150, self.view.center.y)];
+    [path addArcWithCenter:self.view.center radius:150 startAngle:0 endAngle:M_PI *2 clockwise:YES];
+//    [path addArcWithCenter:self.view.center radius:150 startAngle:M_PI *2 endAngle:0 clockwise:NO];//注意：设置逆时针，开始和结束的弧度也要做相应改变
+    
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.path = path.CGPath;
+    shapeLayer.fillColor = [UIColor redColor].CGColor;
+    shapeLayer.strokeColor = [UIColor blackColor].CGColor;
+    shapeLayer.fillRule = kCAFillRuleEvenOdd;
+    [self.view.layer addSublayer:shapeLayer];
+}
+
+
+
+
+#pragma mark - 复杂图形绘制的思考(所有Demo看完后，看这里)
+
+//方式一：纯手动绘制Path。始终只有一个UIBezierPath对象，一次绘制  ----  上面填充规则中的Path就是这种写法
+//方式二：多个Path通过appendPath融合为一个Path。多个UIBezierPath对象，一次绘制。 --- 下面【self Path】就是这种写法
+//方式三：多个Path通过多次绘制实现。多个UIBezierPath对象，多次绘制 --- 柱 折线 饼状图，模拟语音动态显示中有这种写法
+
+/*
+ *   if（绘制的配置信息一致（指CAShapeLayer中的fillColor等属性））
+     {
+        推荐使用 1，2；
+     }
+    else
+     {
+        推荐使用 3;
+     }
+    一般情况下都是1，2，3的组合已达到最优的操作
+ */
+
+-(UIBezierPath *)path
+{
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:self.view.center radius:100 startAngle:0 endAngle:M_PI *2 clockwise:YES];
+    _path = [UIBezierPath bezierPathWithArcCenter:self.view.center radius:150 startAngle:M_PI *2 endAngle:0 clockwise:NO];
+    [path appendPath:_path];//不区分前后顺序，也无论两个Path的位置关系如何（相离，相交，包含等），就是单纯的将两个Path组合成一个Path(相比方式一，无需考虑上次Path的终点的影响，只需直接生成本次的Path即可)
+    return path;
+}
 
 @end

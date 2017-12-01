@@ -45,7 +45,7 @@ static CGFloat h,w;
         layer.path = path.CGPath;
         [self.layer addSublayer:layer];
         
-        //2，显示部分(因为UIBezierPath默认都是闭合的，所以需要分两部分展示，否则会出现不理想的连接线)
+        //2，显示部分(因为UIBezierPath默认都是闭合的，所以需要分两部分绘制，否则会出现不理想的连接线)
         path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(w/2 -25, h/2 -45, 50, 90) cornerRadius:25];
         layer = [CAShapeLayer layer];
         layer.lineWidth = 3.0;
