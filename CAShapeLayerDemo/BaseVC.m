@@ -212,7 +212,7 @@
     [self.view.layer addSublayer:_shapeLayer];
 }
 
-//CAShapeLayer创建的layer，不设置backgroundColor默认是透明的，这一点对于使用mask遮罩时需要注意
+//CAShapeLayer创建的layer，不设置backgroundColor默认是透明的，这一点对于作为mask遮罩使用时需要注意（作为mask的图层不能是透明的）
 -(void)infoTwo
 {
     _path = [UIBezierPath bezierPathWithRect:CGRectMake(20, 20, 200, 200)];
