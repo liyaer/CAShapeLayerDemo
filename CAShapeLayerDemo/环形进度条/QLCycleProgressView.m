@@ -124,11 +124,11 @@
     _progressLayer.path = path.CGPath;
     
     //动画效果
-    [_progressLayer removeAnimationForKey:@"animation1"];
+    [_progressLayer removeAnimationForKey:@"animation1"];//防止上个动画未执行完，所以手动提前移除动画；若上个动画已执行完，那么实际上这里的移除时多余的，默认动画完成会自动移除
     CABasicAnimation *pathAniamtion = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     pathAniamtion.duration = self.animationDuration;// 时间
     pathAniamtion.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];//动画节奏
-    //动画范围0~1代表全程动画
+    //动画范围0~1代表全程动画,对应strokeStart=0.0,strokeEnd=1.0的属性设置
     pathAniamtion.fromValue = [NSNumber numberWithFloat:0.0f];
     pathAniamtion.toValue = [NSNumber numberWithFloat:1.0];
     //    pathAniamtion.autoreverses = YES; //动画逆方向
