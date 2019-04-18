@@ -315,7 +315,7 @@
 {
     UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:self.view.center radius:100 startAngle:0 endAngle:M_PI *2 clockwise:YES];
     _path = [UIBezierPath bezierPathWithArcCenter:self.view.center radius:150 startAngle:M_PI *2 endAngle:0 clockwise:NO];
-    [path appendPath:_path];//不区分前后顺序，也无论两个Path的位置关系如何（相离，相交，包含等），就是单纯的将两个Path组合成一个Path(相比方式一，无需考虑上次Path的终点的影响，只需直接生成本次的Path即可)
+    [path appendPath:_path];//不区分前后顺序，也无论两个Path的位置关系如何（相离，相交，包含等），就是单纯的将两个Path组合成一个Path(相比方式一，无需考虑上次Path的终点的影响，只需直接生成本次的Path即可。方式一下次path的起点和本次path的终点若不是同一个点，那么会在这两个点之间连一条线，appendPath则不会)
     return path;
 }
 
