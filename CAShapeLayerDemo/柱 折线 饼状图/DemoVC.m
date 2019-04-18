@@ -56,14 +56,13 @@
     [self.view addSubview:_bezierView];
     
     //2.折线图
-    [self drawLineChart];
+//    [self drawLineChart];
     
     //3.柱状图
-    //    [self drawBaseChart];
+//    [self drawBaseChart];
     
     //4.饼状图
-    //    [self drawPieChart];
-    
+    [self drawPieChart];
 }
 
 //画折线图
