@@ -8,6 +8,7 @@
 
 #import "DemoVC.h"
 #import "BezierCurveView.h"
+#import "Dwl_BezierPathShapeLayerView.h"
 
 
 #define SCREEN_W  [UIScreen mainScreen].bounds.size.width
@@ -41,7 +42,7 @@
  */
 -(NSMutableArray *)targets{
     if (!_targets) {
-        _targets = [NSMutableArray arrayWithArray:@[@20,@40,@20,@50,@30,@90,@30,@100,@70]];
+        _targets = [NSMutableArray arrayWithArray:@[@200,@40,@20,@50,@30,@90,@30,@200,@70]];
     }
     return _targets;
 }
@@ -51,9 +52,9 @@
     [super viewDidLoad];
     
     //1.初始化
-    _bezierView = [BezierCurveView initWithFrame:CGRectMake(30, 30, SCREEN_W-60, 280)];
-    _bezierView.center = self.view.center;
-    [self.view addSubview:_bezierView];
+//    _bezierView = [BezierCurveView initWithFrame:CGRectMake(30, 30, SCREEN_W-60, 280)];
+//    _bezierView.center = self.view.center;
+//    [self.view addSubview:_bezierView];
     
     //2.折线图
 //    [self drawLineChart];
@@ -62,13 +63,21 @@
 //    [self drawBaseChart];
     
     //4.饼状图
-    [self drawPieChart];
+//    [self drawPieChart];
+
+    WLDrawBarChartHorizontal horizontal = WLDrawBarChartHorizontalMake(5, 27, 20, 30);
+    WLDrawBarChartVertical vertical = WLDrawBarChartVerticalMake(5, 40, 40, 40);
+    WLDrawArcChart arc = WLDrawArcChartMake(10, 10, 30, 30, 70, NO);
+    WLDrawParameters drawParameters = WLDrawParametersMake(horizontal, vertical, arc);
+        
+    Dwl_BezierPathShapeLayerView *bezier = [[Dwl_BezierPathShapeLayerView alloc] initWithFrame:CGRectMake(30, 30, SCREEN_W-60, 280) drawViewWithTitles:self.x_names values:self.targets chartType:WLArcChart drawParameters:drawParameters];
+    bezier.center = self.view.center;
+    [self.view addSubview:bezier];
 }
 
 //画折线图
 -(void)drawLineChart
 {
-    
     //直线
     //    [_bezierView drawLineChartViewWithX_Value_Names:self.x_names TargetValues:self.targets LineType:LineType_Straight];
     

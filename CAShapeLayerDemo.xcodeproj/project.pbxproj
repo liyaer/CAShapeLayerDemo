@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044F4BFD2268602500C481CB /* Dwl_BezierPathShapeLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044F4BFC2268602500C481CB /* Dwl_BezierPathShapeLayerView.m */; };
 		D22CE82F1FC65E6F006342E5 /* launchImg.png in Resources */ = {isa = PBXBuildFile; fileRef = D22CE82E1FC65E6F006342E5 /* launchImg.png */; };
 		D23DDA961FCD6451003FEF35 /* CAShapeLayer+ViewMask.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DDA931FCD6451003FEF35 /* CAShapeLayer+ViewMask.m */; };
 		D23DDA971FCD6451003FEF35 /* VoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DDA951FCD6451003FEF35 /* VoiceView.m */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		044F4BFB2268602500C481CB /* Dwl_BezierPathShapeLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dwl_BezierPathShapeLayerView.h; sourceTree = "<group>"; };
+		044F4BFC2268602500C481CB /* Dwl_BezierPathShapeLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dwl_BezierPathShapeLayerView.m; sourceTree = "<group>"; };
 		D22CE82E1FC65E6F006342E5 /* launchImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImg.png; sourceTree = "<group>"; };
 		D23DDA921FCD6451003FEF35 /* CAShapeLayer+ViewMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+ViewMask.h"; sourceTree = "<group>"; };
 		D23DDA931FCD6451003FEF35 /* CAShapeLayer+ViewMask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+ViewMask.m"; sourceTree = "<group>"; };
@@ -121,6 +124,8 @@
 			children = (
 				D23DDA9F1FCD6576003FEF35 /* DemoVC.h */,
 				D23DDAA01FCD6576003FEF35 /* DemoVC.m */,
+				044F4BFB2268602500C481CB /* Dwl_BezierPathShapeLayerView.h */,
+				044F4BFC2268602500C481CB /* Dwl_BezierPathShapeLayerView.m */,
 				D23DDA9C1FCD6576003FEF35 /* BezierCurveView.h */,
 				D23DDA9D1FCD6576003FEF35 /* BezierCurveView.m */,
 				D23DDA9E1FCD6576003FEF35 /* BezierCurveView.xib */,
@@ -272,6 +277,7 @@
 				TargetAttributes = {
 					D2F588DA1FC6578F00FB75A6 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 8MCBLL5HW5;
 						ProvisioningStyle = Automatic;
 					};
 					D2F588F31FC6578F00FB75A6 = {
@@ -345,6 +351,7 @@
 				D26EF8C81FCE8C7B0001888A /* AnnularVC.m in Sources */,
 				D23DDAA31FCD6576003FEF35 /* DemoVC.m in Sources */,
 				D2F588E61FC6578F00FB75A6 /* BaseVC.m in Sources */,
+				044F4BFD2268602500C481CB /* Dwl_BezierPathShapeLayerView.m in Sources */,
 				D23DDA9A1FCD64D2003FEF35 /* VoiceVC.m in Sources */,
 				D2F588E31FC6578F00FB75A6 /* AppDelegate.m in Sources */,
 				D23DDA971FCD6451003FEF35 /* VoiceView.m in Sources */,
@@ -498,6 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8MCBLL5HW5;
 				INFOPLIST_FILE = CAShapeLayerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.du.CAShapeLayerDemo;
@@ -509,6 +517,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8MCBLL5HW5;
 				INFOPLIST_FILE = CAShapeLayerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.du.CAShapeLayerDemo;
